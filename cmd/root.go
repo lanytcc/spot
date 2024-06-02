@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/ysicing/spot/cmd/flags"
+	"github.com/lanytcc/spot/cmd/flags"
 
 	"github.com/ergoapi/util/color"
 	"github.com/sirupsen/logrus"

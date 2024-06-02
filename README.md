@@ -1,12 +1,12 @@
 # Spot 竞价机器小助手
 
-[![Release](https://github.com/ysicing/spot/actions/workflows/release.yml/badge.svg)](https://github.com/ysicing/spot/actions/workflows/release.yml)
-![GitHub go.mod Go version (subdirectory of monorepo)](https://img.shields.io/github/go-mod/go-version/ysicing/spot?filename=go.mod&style=flat-square)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/ysicing/spot?style=flat-square)
-![GitHub all releases](https://img.shields.io/github/downloads/ysicing/spot/total?style=flat-square)
-![GitHub](https://img.shields.io/github/license/ysicing/spot?style=flat-square)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ysicing/spot)](https://goreportcard.com/report/github.com/ysicing/spot)
-[![Releases](https://img.shields.io/github/release-pre/ysicing/spot.svg)](https://github.com/ysicing/spot/releases)
+[![Release](https://github.com/lanytcc/spot/actions/workflows/release.yml/badge.svg)](https://github.com/lanytcc/spot/actions/workflows/release.yml)
+![GitHub go.mod Go version (subdirectory of monorepo)](https://img.shields.io/github/go-mod/go-version/lanytcc/spot?filename=go.mod&style=flat-square)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/lanytcc/spot?style=flat-square)
+![GitHub all releases](https://img.shields.io/github/downloads/lanytcc/spot/total?style=flat-square)
+![GitHub](https://img.shields.io/github/license/lanytcc/spot?style=flat-square)
+[![Go Report Card](https://goreportcard.com/badge/github.com/lanytcc/spot)](https://goreportcard.com/report/github.com/lanytcc/spot)
+[![Releases](https://img.shields.io/github/release-pre/lanytcc/spot.svg)](https://github.com/lanytcc/spot/releases)
 
 > 解决频繁开通竞价机器
 
@@ -24,21 +24,21 @@
 
 ### 二进制安装
 
-从 [Github Release](https://github.com/ysicing/spot/releases) 下载已经编译好的二进制文件:
+从 [Github Release](https://github.com/lanytcc/spot/releases) 下载已经编译好的二进制文件:
 
 ### macOS安装
 
 - 支持brew方式
 
 ```bash
-brew tap ysicing/tap
+brew tap lanytcc/tap
 brew install spotvm
 ```
 
 ### Debian系安装
 
 ```bash
-echo "deb [trusted=yes] https://mirrors.ysicing.net/ysicing/apt/ /" | sudo tee /etc/apt/sources.list.d/ysicing.list
+echo "deb [trusted=yes] https://mirrors.lanytcc.net/lanytcc/apt/ /" | sudo tee /etc/apt/sources.list.d/lanytcc.list
 apt update
 apt install -y spot
 spot -v
@@ -50,7 +50,7 @@ spot -v
 cat /etc/yum.repos.d/fury.repo
 [fury]
 name=Gemfury Private Repo
-baseurl=https://yum.fury.io/ysicing/
+baseurl=https://yum.fury.io/lanytcc/
 enabled=1
 gpgcheck=0
 ```
@@ -68,7 +68,7 @@ make build && ./dist/spot_darwin_amd64
 ## 配置使用
 
 ```yaml
-cat /home/ysicing/.spot.yaml
+cat /home/lanytcc/.spot.yaml
 qcloud:
   account:
     id: AKIDxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -98,7 +98,7 @@ qcloud:
       id: sg-xxxx
 
   dnspod:
-    main: "ysicing.net"
+    main: "lanytcc.net"
     sub: "*.dev"
 ```
 
@@ -106,19 +106,19 @@ qcloud:
 
 ```bash
 # 创建1台机器, 默认开启公网访问100M按流量计费， 超过1台则默认不分配公网ip(因为我们环境默认nat出去)
-spot new --config /home/ysicing/.spot.yaml
+spot new --config /home/lanytcc/.spot.yaml
 # 列表
-spot list --config /home/ysicing/.spot.yaml
-INFO[0000] Using config file: /home/ysicing/.spot.yaml
+spot list --config /home/lanytcc/.spot.yaml
+INFO[0000] Using config file: /home/lanytcc/.spot.yaml
 创建时间             Name                ID           内网IP      公网IP         规格        类型     状态
 2022-08-22T13:17:34Z spot-20220822211647 ins-kysdso6l 10.10.16.39 42.192.202.136 SA2.MEDIUM4 SPOTPAID RUNNING
 # 销毁
-spot destroy --config /home/ysicing/.spot.yaml
+spot destroy --config /home/lanytcc/.spot.yaml
 # 销毁全部
-spot destroy --config /home/ysicing/.spot.yaml --all
+spot destroy --config /home/lanytcc/.spot.yaml --all
 # 添加解析记录
-spot dnspod --config /home/ysicing/.spot.yaml
-INFO[0000] Using config file: /home/ysicing/.spot.yaml
+spot dnspod --config /home/lanytcc/.spot.yaml
+INFO[0000] Using config file: /home/lanytcc/.spot.yaml
 🎉 10.10.16.25
-INFO[0003] create record success *.dev.ysicing.net ---> 106.54.x.x
+INFO[0003] create record success *.dev.lanytcc.net ---> 106.54.x.x
 ```

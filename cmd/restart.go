@@ -1,10 +1,10 @@
 package cmd
 
 import (
+	"github.com/lanytcc/spot/cloud/qcloud"
 	"github.com/manifoldco/promptui"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
-	"github.com/ysicing/spot/cloud/qcloud"
 )
 
 func cmdRestart() *cobra.Command {

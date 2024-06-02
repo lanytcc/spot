@@ -3,7 +3,7 @@ package cmd
 import (
 	"strings"
 
-	"github.com/ysicing/spot/cloud/qcloud"
+	"github.com/lanytcc/spot/cloud/qcloud"
 
 	"github.com/manifoldco/promptui"
 	"github.com/sirupsen/logrus"

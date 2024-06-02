@@ -25,5 +25,5 @@ qcloud:
     securitygroup:
       id: sg-id
   dnspod:
-    main: "ysicing.net"
+    main: "lanytcc.net"
     sub: "*.dev"

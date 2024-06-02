@@ -9,24 +9,24 @@ linuxarm64sha=$(cat dist/checksums.txt | grep spot_linux_arm64 | awk '{print $1}
 cat > spotvm.rb <<EOF
 class Spotvm < Formula
     desc "spot vm tool"
-    homepage "https://github.com/ysicing/spot"
+    homepage "https://github.com/lanytcc/spot"
     version "${version}"
 
     if OS.mac?
       if Hardware::CPU.arm?
-        url "https://github.com/ysicing/spot/releases/download/v#{version}/spot_darwin_arm64"
+        url "https://github.com/lanytcc/spot/releases/download/v#{version}/spot_darwin_arm64"
         sha256 "${macosarm64sha}"
       else
-        url "https://github.com/ysicing/spot/releases/download/v#{version}/spot_darwin_amd64"
+        url "https://github.com/lanytcc/spot/releases/download/v#{version}/spot_darwin_amd64"
         sha256 "${macosamd64sha}"
       end
     elsif OS.linux?
       if Hardware::CPU.intel?
-        url "https://github.com/ysicing/spot/releases/download/v#{version}/spot_linux_amd64"
+        url "https://github.com/lanytcc/spot/releases/download/v#{version}/spot_linux_amd64"
         sha256 "${linuxamd64sha}"
       end
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        url "https://github.com/ysicing/spot/releases/download/v#{version}/spot_linux_arm64"
+        url "https://github.com/lanytcc/spot/releases/download/v#{version}/spot_linux_arm64"
         sha256 "${linuxarm64sha}"
       end
     end

@@ -4,11 +4,11 @@ import (
 	"errors"
 	"strings"
 
+	"github.com/lanytcc/spot/cloud/qcloud"
 	"github.com/manifoldco/promptui"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/ysicing/spot/cloud/qcloud"
 )
 
 func cmdDnspod() *cobra.Command {

@@ -1,4 +1,4 @@
-module github.com/ysicing/spot
+module github.com/lanytcc/spot
 
 go 1.22.0
 
