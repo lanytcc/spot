@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/ysicing/spot/cloud/qcloud"
+	"github.com/lanytcc/spot/cloud/qcloud"
 
 	"github.com/spf13/cobra"
 )

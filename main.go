@@ -1,6 +1,6 @@
 package main
 
-import "github.com/ysicing/spot/cmd"
+import "github.com/lanytcc/spot/cmd"
 
 func main() {
 	cmd.Execute()

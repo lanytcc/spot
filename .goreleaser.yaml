@@ -33,13 +33,13 @@ snapshot:
   name_template: "{{ incpatch .Version }}-next"
 nfpms:
 - file_name_template: 'spot_{{ .Tag }}_{{ .Os }}_{{ .Arch }}'
-  homepage: https://github.com/ysicing/spot
+  homepage: https://github.com/lanytcc/spot
   version_metadata: git
   description: |-
     Spot VM Tool
-  maintainer: ysicing
+  maintainer: lanytcc
   license: MIT
-  vendor: https://github.com/ysicing/spot
+  vendor: https://github.com/lanytcc/spot
   formats:
   # - apk
   - deb
@@ -57,5 +57,5 @@ release:
   # If set to true, will not auto-publish the release.
   # Default is false.
   github:
-    owner: ysicing
+    owner: lanytcc
     name: spot
