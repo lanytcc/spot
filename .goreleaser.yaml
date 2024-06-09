@@ -16,6 +16,8 @@ builds:
       post:
         - upx -9 -f -q "{{ .Path }}"
   - id: other
+    ldflags:
+      - -X 'github.com/lanytcc/spot/cmd.version={{ .Version }}'
     env:
       - CGO_ENABLED=0
     goarch:
@@ -26,13 +28,13 @@ builds:
       - darwin
 archives:
   - format: binary
-    name_template: "spot_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+    name_template: "spotvm_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
 checksum:
   name_template: 'checksums.txt'
 snapshot:
   name_template: "{{ incpatch .Version }}-next"
 nfpms:
-- file_name_template: 'spot_{{ .Tag }}_{{ .Os }}_{{ .Arch }}'
+- file_name_template: 'spotvm_{{ .Tag }}_{{ .Os }}_{{ .Arch }}'
   homepage: https://github.com/lanytcc/spot
   version_metadata: git
   description: |-
