@@ -1,9 +1,8 @@
 package cmd
 
 import (
-	"github.com/lanytcc/spot/cmd/flags"
-
 	"github.com/ergoapi/util/color"
+	"github.com/lanytcc/spot/cmd/flags"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -11,6 +10,7 @@ import (
 
 var (
 	globalFlags *flags.GlobalFlags
+	version     string // This will be set during build time
 )
 
 func init() {
@@ -44,11 +44,11 @@ func BuildRoot() *cobra.Command {
 // NewRootCmd returns a new root command
 func NewRootCmd() *cobra.Command {
 	return &cobra.Command{
-		Use:           "spot",
+		Use:           "spotvm",
 		SilenceUsage:  true,
 		SilenceErrors: true,
 		Short:         "腾讯云虚拟机管理工具",
-		Version:       "0.3.0",
+		Version:       version,
 		PersistentPreRunE: func(_ *cobra.Command, _ []string) error {
 			if globalFlags.Debug {
 				logrus.SetLevel(logrus.DebugLevel)
